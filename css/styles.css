@@ -1,0 +1,148 @@
+input::placeholder {
+    color: #888;
+    font-family: 'Bookman Old Style', sans-serif;
+}
+
+input {
+    color: #555;
+    font-family: 'Bookman Old Style', sans-serif; 
+    display: block;
+    margin: 0 auto;
+    width: calc(100% - 40px);
+}
+
+body {
+    font-family: 'Bookman Old Style', sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 10px;
+    color: #504b4b;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    font-family: 'Bookman Old Style';
+}
+
+.auth-button i {
+    margin-right: 8px;
+}
+
+.auth-button .fab {
+    color: #4267B2;
+}
+
+.auth-button:hover {
+    background-color: #f0f0f0;
+}
+
+.google-button {
+    position: relative;
+}
+
+.google-button .google-icon {
+    background: url('../images/google.png') no-repeat center center;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.facebook-button .fab {
+    color: #4267B2;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+}
+
+.input-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.divider::before {
+    margin-right: 10px;
+}
+
+.divider::after {
+    margin-left: 10px;
+}
+
+.header-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-title .login {
+    color: #888;
+}
+
+.header-title .register {
+    color: #4CAF50;
+}
+
+.register-button {
+    font-family: 'Bookman Old Style', sans-serif;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
