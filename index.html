@@ -3,114 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration - GREENSHOP</title>
+    <title>GREENSHOP - Home</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script>
-        function handleCredentialResponse(response) {
-            console.log("Encoded JWT ID token: " + response.credential);
-        }
-
-        window.onload = function () {
-            google.accounts.id.initialize({
-                client_id: "YOUR_GOOGLE_CLIENT_ID",
-                callback: handleCredentialResponse
-            });
-            google.accounts.id.renderButton(
-                document.getElementById("googleButtonDiv"),
-                { theme: "outline", size: "large" }  
-            );
-            google.accounts.id.prompt(); 
-        }
-    </script>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_UA/sdk.js"></script>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : 'YOUR_FACEBOOK_APP_ID',
-                cookie     : true,
-                xfbml      : true,
-                version    : 'v14.0'
-            });
-
-            FB.AppEvents.logPageView();
-        };
-
-        function checkLoginState() {
-            FB.getLoginStatus(function(response) {
-                statusChangeCallback(response);
-            });
-        }
-
-        function statusChangeCallback(response) {
-            if (response.status === 'connected') {
-                console.log('Logged in.');
-            } else {
-                console.log('User not authenticated');
-            }
-        }
-
-        function customFacebookLogin() {
-            FB.login(function(response) {
-                if (response.authResponse) {
-                    console.log('Welcome! Fetching your information.... ');
-                    FB.api('/me', function(response) {
-                        console.log('Good to see you, ' + response.name + '.');
-                    });
-                } else {
-                    console.log('User cancelled login or did not fully authorize.');
-                }
-            }, {scope: 'public_profile,email'});
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" defer></script>
 </head>
 <body>
-    <div class="form-container">
-        <div class="header-title">
-            <span class="login">Login</span> | <span class="register">Register</span>
-        </div>
-        <p>Enter your email and password.</p>
-        <form>
-            <input type="text" id="firstname" name="firstname" placeholder="Username" class="form-input">
-            <input type="email" id="email" name="email" placeholder="Email" class="form-input">
-            <div class="input-container">
-                <input type="password" id="password" name="password" placeholder="Password" class="form-input">
-                <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('password')"></i>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="images/leaf.png" alt="Leaf Logo" class="logo-image">
+                <h1 class="logo">GREENSHOP</h1>
             </div>
-            <div class="input-container">
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" class="form-input">
-                <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('confirm_password')"></i>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="login-button">
+                Login <i class="fas fa-sign-in-alt"></i>
+            </button>
+        </header>
+        <section class="intro">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2 class="welcome">WELCOME TO GREENSHOP</h2>
+                    <h3 class="better-planet">LET'S MAKE A <br>BETTER <span class="green-planet">PLANET</span></h3>
+                    <p class="description">We are an online plant shop offering a wide range of cheap and trendy plants. Use our plants to create a unique Urban Jungle. Order your favourite plants!</p>
+                    <button class="shop-button">Shop now</button>
+                </div>
+                <img src="images/plant.png" alt="Plant Image" class="plant-image">
             </div>
-            <button type="submit" class="register-button">Register</button>
-        </form>
-        <div class="divider">Or registration with</div>
-        <div style="text-align: center;">
-            <button onclick="google.accounts.id.prompt()" class="auth-button google-button">
-                <span class="google-icon"></span> Continue with Google
-            </button>
-            <button onclick="customFacebookLogin()" class="auth-button facebook-button">
-                <i class="fab fa-facebook-f"></i> Continue with Facebook
-            </button>
-        </div>
+        </section>
     </div>
-    <script>
-        function togglePasswordVisibility(id) {
-            var passwordField = document.getElementById(id);
-            var toggleIcon = passwordField.nextElementSibling;
-
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-                toggleIcon.classList.remove('fa-eye');
-                toggleIcon.classList.add('fa-eye-slash');
-            } else {
-                passwordField.type = 'password';
-                toggleIcon.classList.remove('fa-eye-slash');
-                toggleIcon.classList.add('fa-eye');
-            }
-        }
-    </script>
 </body>
 </html>
