@@ -37,7 +37,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     padding: 20px 0;
     border-bottom: 2px solid #ccc;
 }
@@ -123,14 +122,12 @@ nav ul li a:hover::after {
 
 .intro-content {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
 }
 
 .intro-text {
     max-width: 600px;
-    padding-left: 40px;
-    padding-top: 80px;
 }
 
 .welcome {
@@ -171,42 +168,51 @@ nav ul li a:hover::after {
 .plant-image {
     width: 500px;
     height: auto;
-    margin-left: 20px;
 }
+
 .cards-section {
-    text-align: center;
     padding: 40px 0;
 }
 
-.cards-section .card {
-    display: inline-block;
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: 250px;
+    width: 30%;
+    min-width: 250px;
     margin: 10px;
-    vertical-align: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
 }
 
-.cards-section .card img {
+.card img {
     width: 100%;
     height: 150px;
-    object-fit: contain;
+    object-fit: contain; /* Change to contain to avoid cropping */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
 
-.cards-section .card .card-content {
+.card-content {
     padding: 20px;
 }
 
-.cards-section .card .card-title {
+.card-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.cards-section .card .card-description {
+.card-description {
     color: #888;
     font-size: 14px;
 }
