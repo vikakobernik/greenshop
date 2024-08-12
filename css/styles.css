@@ -72,11 +72,10 @@ nav ul {
 }
 
 nav ul li {
-    position: relative; /* Це важливо для того, щоб випадаюче меню було відносно батьківського елемента */
+    position: relative; 
     margin: 0 10px;
 }
 
-/* Стили для посилань у меню */
 nav ul li a {
     text-decoration: none;
     color: #888;
@@ -85,10 +84,9 @@ nav ul li a {
     padding: 10px;
 }
 
-/* Стилі для випадаючого меню */
 .dropdown-menu,
 .submenu {
-    display: none; /* За замовчуванням сховано */
+    display: none;
     position: absolute;
     background-color: #fff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -99,27 +97,23 @@ nav ul li a {
     z-index: 1000;
 }
 
-/* Позиціонування першого рівня випадаючого меню */
 .dropdown-menu {
     top: 100%;
     left: 0;
     min-width: 200px;
 }
 
-/* Позиціонування другого рівня випадаючого меню */
 .submenu {
     top: 0;
     left: 100%;
     min-width: 200px;
 }
 
-/* Відображення меню при наведенні */
 .dropdown:hover .dropdown-menu,
 .dropdown-submenu:hover .submenu {
     display: block;
 }
 
-/* Стилі для пунктів випадаючого меню */
 .dropdown-menu li,
 .submenu li {
     margin: 0;
@@ -211,6 +205,12 @@ nav ul li a {
     height: auto;
 }
 
+.gradient-section {
+    background: linear-gradient(45deg, #4CAF50, #81C784);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
 .cards-section {
     padding: 40px 0;
 }
@@ -238,7 +238,7 @@ nav ul li a {
 .card img {
     width: 100%;
     height: 150px;
-    object-fit: contain; /* Change to contain to avoid cropping */
+    object-fit: contain; 
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -256,4 +256,118 @@ nav ul li a {
 .card-description {
     color: #888;
     font-size: 14px;
+}
+
+.background-image-section {
+    background-image: url('images/bg-plants.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+}
+.column-with-image {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.header-image {
+    width: 100%;
+    height: auto; 
+    margin-bottom: 20px; 
+}
+.three-column-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.column {
+    flex: 1;
+    padding: 0 20px;
+    text-align: left;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.column:last-child {
+    border-right: none;
+}
+
+.column-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    background-image: url('images/icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.email-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.newsletter-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.email-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.newsletter-text {
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+}
+.gradient-section {
+    padding: 20px;
+    background: linear-gradient(to right, #a8e6a4, #4caf50); /* Градієнт з світло-зеленого в зелений */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gradient-content {
+    display: flex;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 10px;
+}
+
+.column i {
+    margin-right: 10px; 
+    font-size: 18px; 
+}
+
+.green-text {
+    font-weight: bold;
+    color: #4caf50; 
 }
