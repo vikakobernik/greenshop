@@ -1,6 +1,9 @@
-body, html {
+html, body {
     margin: 0;
     height: 100%;
+}
+
+body.preloader-active {
     overflow: hidden;
 }
 
@@ -10,6 +13,11 @@ body, html {
     align-items: center;
     height: 100vh;
     background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .spinner {
@@ -24,4 +32,8 @@ body, html {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+body.loaded .preloader {
+    display: none;
 }

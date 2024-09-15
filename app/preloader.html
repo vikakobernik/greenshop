@@ -6,9 +6,16 @@
     <title>Preloader</title>
     <link rel="stylesheet" href="preloader.css">
 </head>
-<body>
+<body class="preloader-active">
     <div class="preloader">
         <div class="spinner"></div>
     </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.remove('preloader-active');
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
 </html>
